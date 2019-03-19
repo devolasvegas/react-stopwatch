@@ -6,13 +6,7 @@ import logo from './logo.svg';
 const StyledStopwatch = styled.main`
   text-align: center;
 
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 40vmin;
-    pointer-events: none;
-  }
-
-  .App-header {
+  article {
     background-color: #282c34;
     min-height: 100vh;
     display: flex;
@@ -21,10 +15,6 @@ const StyledStopwatch = styled.main`
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
-  }
-
-  .App-link {
-    color: #61dafb;
   }
 
   .button-container {
@@ -45,16 +35,6 @@ const StyledStopwatch = styled.main`
       border-radius: 3px;
     }
   }
-
-
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
 `
 
 class Stopwatch extends Component {
@@ -62,10 +42,6 @@ class Stopwatch extends Component {
     return (
       <StyledStopwatch>
         <article className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
           <div className="button-container">
             <button type="button" className="start-button">
               Start
