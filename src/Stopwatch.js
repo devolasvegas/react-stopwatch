@@ -35,18 +35,34 @@ const StyledStopwatch = styled.main`
 `
 
 class Stopwatch extends Component {
+  state = {
+    isRunning: false,
+    timeRunning: 0,
+  }
+
+  startButton = () => {
+    this.setState({ timeRunning: 5, isRunning: true })
+  }
+
+  resetButton = () => {
+    this.setState({ timeRunning: 0, isRunning: false })
+  }
+
   render() {
+    const { isRunning, timeRunning } = this.state;
+    
     return (
       <StyledStopwatch>
         <article className="App-header">
+          <p>{timeRunning}</p>
           <div className="button-container">
-            <button type="button" className="start-button">
-              Start
+            <button type="button" className="start-button" onClick={this.startButton}>
+              { isRunning ? 'Stop' : 'Start'}
             </button>
             <button type="button" className="split-button">
               Split
             </button>
-            <button type="button" className="reset-button">
+            <button type="button" className="reset-button" onClick={this.resetButton}>
               Reset
             </button>
           </div>

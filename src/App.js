@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 import Stopwatch from './Stopwatch'
 
