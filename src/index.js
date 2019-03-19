@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
-import Stopwatch from './Stopwatch';
+import App from './App';
 
-ReactDOM.render(<Stopwatch />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 
 import logo from './logo.svg';
-import './App.css';
 
 const StyledStopwatch = styled.main`
   text-align: center;
@@ -68,13 +67,13 @@ class Stopwatch extends Component {
             Edit <code>src/App.js</code> and save to reload.
           </p>
           <div className="button-container">
-            <button className="start-button">
+            <button type="button" className="start-button">
               Start
             </button>
-            <button className="split-button">
+            <button type="button" className="split-button">
               Split
             </button>
-            <button className="reset-button">
+            <button type="button" className="reset-button">
               Reset
             </button>
           </div>
