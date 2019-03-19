@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styled, { ThemeProvider } from 'styled-components'
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 import Stopwatch from './Stopwatch'
 
@@ -8,12 +8,32 @@ const theme = {
   secondaryColor: '#282c34',
 }
 
+const GlobalStyleProvider = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
+`
+
 class App extends Component {
   render() {
     return (
-      <ThemeProvider theme={theme}>
-        <Stopwatch />
-      </ThemeProvider>
+      <>
+        <GlobalStyleProvider />
+        <ThemeProvider theme={theme}>
+          <Stopwatch />
+        </ThemeProvider>
+      </>
     )
   }
 }
