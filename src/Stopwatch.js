@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 
-import logo from './logo.svg';
 
 const StyledStopwatch = styled.main`
   text-align: center;
