@@ -3,10 +3,17 @@ import styled, { ThemeProvider } from 'styled-components'
 
 import Stopwatch from './Stopwatch'
 
+const theme = {
+  mainColor: '#61dafb',
+  secondaryColor: '#282c34',
+}
+
 class App extends Component {
   render() {
     return (
-      <Stopwatch />
+      <ThemeProvider theme={theme}>
+        <Stopwatch />
+      </ThemeProvider>
     )
   }
 }

@@ -7,14 +7,12 @@ const StyledStopwatch = styled.main`
   text-align: center;
 
   article {
-    background-color: #282c34;
+    background-color: ${props => props.theme.secondaryColor};
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
   }
 
   .button-container {
@@ -26,12 +24,12 @@ const StyledStopwatch = styled.main`
     flex-wrap: wrap;
 
     button {
-      color: #61dafb;
-      font-size: 1.25rem;
+      color: ${props => props.theme.mainColor};
+      font-size: calc(10px + 2vmin);
       margin: 0.5em;
       padding: 0.25em 5%;
       background: transparent;
-      border: 3px solid #61dafb;
+      border: 3px solid ${props => props.theme.mainColor};
       border-radius: 3px;
     }
   }
