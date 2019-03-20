@@ -13,9 +13,18 @@ const StyledStopwatch = styled.main`
     align-items: center;
     justify-content: center;
 
+    ul {
+      list-style-type: none;
+      color: ${props => props.theme.mainColor};
+      width: 100%;
+      padding: 0;
+      text-align: left;
+    }
+
     .timer {
       color: ${props => props.theme.mainColor};
       font-size: calc(20px + 5vmin);
+      margin-bottom: 0;
     }
 
     .button-container {
@@ -101,17 +110,19 @@ class Stopwatch extends Component {
     return (
       <StyledStopwatch>
         <article className="App-header">
-          <p className="timer">{this.formatTime(timeRunning)}</p>
-          <ul>
-            {splits.map(split => (
-              <li>{this.formatTime(split)}</li>
-            ))}
-          </ul>
+          <div className="timer-container">
+            <p className="timer">{this.formatTime(timeRunning)}</p>
+            <ul>
+              {splits.map((split, i) => (
+                <li key={i}>{this.formatTime(split)}</li>
+              ))}
+            </ul>
+          </div>
           <div className="button-container">
             <button type="button" className="start-button" onClick={this.startButton}>
               { isRunning ? 'Stop' : 'Start'}
             </button>
-            <button type="button" className={`split-button${isRunning ? '' : ' inactive'}`} onClick={this.splitButton}>
+            <button type="button" className={`split-button${isRunning ? '' : ' inactive'}`} onClick={isRunning ? this.splitButton : null}>
               Split
             </button>
             <button type="button" className={`reset-button${isRunning ? ' inactive' : ''}`} onClick={isRunning ? null : this.resetButton}>
