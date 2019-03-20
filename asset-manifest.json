@@ -1,11 +1,11 @@
 {
-  "main.js": "/react-stopwatch/static/js/main.4542b735.chunk.js",
-  "main.js.map": "/react-stopwatch/static/js/main.4542b735.chunk.js.map",
+  "main.js": "/react-stopwatch/static/js/main.8b2d4ff0.chunk.js",
+  "main.js.map": "/react-stopwatch/static/js/main.8b2d4ff0.chunk.js.map",
   "runtime~main.js": "/react-stopwatch/static/js/runtime~main.b7a26dfe.js",
   "runtime~main.js.map": "/react-stopwatch/static/js/runtime~main.b7a26dfe.js.map",
-  "static/js/2.bb8468c6.chunk.js": "/react-stopwatch/static/js/2.bb8468c6.chunk.js",
-  "static/js/2.bb8468c6.chunk.js.map": "/react-stopwatch/static/js/2.bb8468c6.chunk.js.map",
+  "static/js/2.98ae715e.chunk.js": "/react-stopwatch/static/js/2.98ae715e.chunk.js",
+  "static/js/2.98ae715e.chunk.js.map": "/react-stopwatch/static/js/2.98ae715e.chunk.js.map",
   "index.html": "/react-stopwatch/index.html",
-  "precache-manifest.be741be1ce87f8d31f9cd8b082b24dc1.js": "/react-stopwatch/precache-manifest.be741be1ce87f8d31f9cd8b082b24dc1.js",
+  "precache-manifest.cd69e8c0b15eda5f6f4a52d39766f054.js": "/react-stopwatch/precache-manifest.cd69e8c0b15eda5f6f4a52d39766f054.js",
   "service-worker.js": "/react-stopwatch/service-worker.js"
 }
