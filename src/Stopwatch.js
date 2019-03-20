@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 import ReactSVG from 'react-svg'
+import github from './img/github-logo.svg'
 
 
 const StyledStopwatch = styled.main`
@@ -35,6 +36,7 @@ const StyledStopwatch = styled.main`
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
+      margin-bottom: 2em;
 
       button {
         color: ${props => props.theme.mainColor};
@@ -52,7 +54,10 @@ const StyledStopwatch = styled.main`
     }
 
     svg {
-      width: 50px;
+      height: 50px;
+      path {
+        fill: ${props => props.theme.mainColor};
+      }
     }
   }
 `
@@ -72,9 +77,15 @@ class Stopwatch extends Component {
   startButton = () => {
     this.setState(state => {
       if(!!state.isRunning) {
+        // Add another split to the list if splits exist
+        // if(state.splits.length >= 1) {
+        //   this.splitButton()
+        // }
+        // Stop the timer
         clearInterval(this.timer)
       } else {
         const startTime = Date.now() - this.state.timeRunning
+        // Start the timer
         this.timer = setInterval(() => {
           this.setState({ timeRunning: Date.now() - startTime })
         })
@@ -84,7 +95,10 @@ class Stopwatch extends Component {
   }
 
   splitButton = () => {
+    // Make a copy of state
     const splits = this.state.splits
+    // If there are already splits, use the total of all splits 
+    // to calc a new split
     if(splits.length >= 1) {
       const splitsTotal = splits.reduce((total, current) => (
         total + current
@@ -92,12 +106,14 @@ class Stopwatch extends Component {
       const newSplit = this.state.timeRunning - splitsTotal
       splits.push(newSplit)
     } else {
+      // first split is current running time
       splits.push(this.state.timeRunning)
     }
     this.setState({ splits })
   }
 
   resetButton = () => {
+    // Blow it all away
     this.setState({
       timeRunning: 0,
       isRunning: false,
@@ -135,7 +151,7 @@ class Stopwatch extends Component {
             </button>
           </div>
           <a href="https://github.com/devolasvegas/react-stopwatch" target="_blank" rel="noopener noreferrer">
-            <ReactSVG src="/img/github-logo.svg" />
+            <ReactSVG src={github} />
           </a>
         </article>
       </StyledStopwatch>
