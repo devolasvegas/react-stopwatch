@@ -4,7 +4,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import Stopwatch from './Stopwatch'
 
 const theme = {
-  mainColor: '#61dafb',
+  mainColor: '#bada55',
   secondaryColor: '#282c34',
 }
 
