@@ -135,7 +135,7 @@ class Stopwatch extends Component {
             </button>
           </div>
           <a href="https://github.com/devolasvegas/react-stopwatch" target="_blank" rel="noopener noreferrer">
-            <ReactSVG src="github-logo.svg" alt="Github Repo for this Page"/>
+            <ReactSVG src="/img/github-logo.svg" />
           </a>
         </article>
       </StyledStopwatch>
