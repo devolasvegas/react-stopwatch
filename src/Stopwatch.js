@@ -72,8 +72,10 @@ class Stopwatch extends Component {
   splitButton = () => {
     const splits = this.state.splits
     if(splits.length >= 1) {
-      const lastSplit = splits[splits.length - 1]
-      const newSplit = this.state.timeRunning - lastSplit
+      const splitsTotal = splits.reduce((total, current) => (
+        total + current
+      ))
+      const newSplit = this.state.timeRunning - splitsTotal
       splits.push(newSplit)
     } else {
       splits.push(this.state.timeRunning)
