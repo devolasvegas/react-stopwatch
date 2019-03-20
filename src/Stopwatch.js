@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
+import ReactSVG from 'react-svg'
 
 
 const StyledStopwatch = styled.main`
@@ -134,7 +135,7 @@ class Stopwatch extends Component {
             </button>
           </div>
           <a href="https://github.com/devolasvegas/react-stopwatch" target="_blank" rel="noopener noreferrer">
-            <img src="github-logo.svg" alt="Github Repo for this Page"/>
+            <ReactSVG src="github-logo.svg" alt="Github Repo for this Page"/>
           </a>
         </article>
       </StyledStopwatch>
