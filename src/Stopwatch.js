@@ -14,6 +14,11 @@ const StyledStopwatch = styled.main`
     justify-content: center;
   }
 
+  .timer {
+    color: ${props => props.theme.mainColor};
+    font-size: calc(10px + 2vmin);
+  }
+
   .button-container {
     width: 900px;
     max-width: 90%;
@@ -48,7 +53,7 @@ class Stopwatch extends Component {
       } else {
         const startTime = Date.now() - this.state.timeRunning
         this.timer = setInterval(() => {
-          this.setState({ timeRunning: Date.now() - startTime})
+          this.setState({ timeRunning: Date.now() - startTime })
         })
       }
       return { isRunning: !state.isRunning }
@@ -60,7 +65,15 @@ class Stopwatch extends Component {
   }
 
   resetButton = () => {
-    this.setState({ timeRunning: 0, isRunning: false })
+    this.setState({
+      timeRunning: 0,
+      isRunning: false,
+      splits: [],
+    })
+  }
+
+  formatTime = (milliseconds) => {
+    return new Date(milliseconds).toISOString().slice(11, -1)
   }
 
   render() {
@@ -69,12 +82,12 @@ class Stopwatch extends Component {
     return (
       <StyledStopwatch>
         <article className="App-header">
-          <p>{timeRunning}</p>
+          <p className="timer">{this.formatTime(timeRunning)}</p>
           <div className="button-container">
             <button type="button" className="start-button" onClick={this.startButton}>
               { isRunning ? 'Stop' : 'Start'}
             </button>
-            <button type="button" className="split-button">
+            <button type="button" className="split-button" onClick={this.splitButton}>
               Split
             </button>
             <button type="button" className="reset-button" onClick={this.resetButton}>
