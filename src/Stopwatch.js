@@ -47,8 +47,10 @@ const StyledStopwatch = styled.main`
         border: 3px solid ${props => props.theme.mainColor};
         border-radius: 3px;
         transition: 300ms;
+        cursor: pointer;
         &.inactive {
             opacity: 0.5;
+            pointer-events: none;
         }
       }
     }
