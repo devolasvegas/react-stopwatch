@@ -38,10 +38,25 @@ class Stopwatch extends Component {
   state = {
     isRunning: false,
     timeRunning: 0,
+    splits: [],
   }
 
   startButton = () => {
-    this.setState({ timeRunning: 5, isRunning: true })
+    this.setState(state => {
+      if(!!state.isRunning) {
+        clearInterval(this.timer)
+      } else {
+        const startTime = Date.now() - this.state.timeRunning
+        this.timer = setInterval(() => {
+          this.setState({ timeRunning: Date.now() - startTime})
+        })
+      }
+      return { isRunning: !state.isRunning }
+    })
+  }
+
+  splitButton = () => {
+    console.log('Split!')
   }
 
   resetButton = () => {
