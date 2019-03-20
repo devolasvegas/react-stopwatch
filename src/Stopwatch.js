@@ -49,6 +49,10 @@ const StyledStopwatch = styled.main`
         }
       }
     }
+
+    svg {
+      width: 50px;
+    }
   }
 `
 
@@ -129,6 +133,9 @@ class Stopwatch extends Component {
               Reset
             </button>
           </div>
+          <a href="https://github.com/devolasvegas/react-stopwatch" target="_blank" rel="noopener noreferrer">
+            <img src="github-logo.svg" alt="Github Repo for this Page"/>
+          </a>
         </article>
       </StyledStopwatch>
     );
